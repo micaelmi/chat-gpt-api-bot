@@ -2,6 +2,9 @@
 
 Este é um aplicativo de chatbot interativo desenvolvido com **React** no frontend e **Fastify** no backend. O projeto utiliza a API de chat da OpenAI para fornecer respostas automatizadas às perguntas dos usuários.
 
+![image](https://github.com/user-attachments/assets/c552f4f5-5aeb-4c1b-9f2f-2c72034a4e26)
+
+
 ---
 
 ## **Índice**
