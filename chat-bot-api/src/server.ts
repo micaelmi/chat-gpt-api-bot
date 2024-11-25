@@ -32,7 +32,7 @@ async function chatWithGPT(
       {
         model: "gpt-3.5-turbo",
         messages: messages,
-        temperature: 0.7,
+        temperature: 1.5,
       },
       {
         headers: {
@@ -86,7 +86,14 @@ app.post<{ Body: ChatRequest }>("/chat", async (request, reply) => {
   }
 });
 
+const PORT = Number(process.env.PORT) || 5000;
+const HOST = "0.0.0.0";
+
 // Inicie o servidor
-app.listen({ port: 5000 }).then(() => {
-  console.log("Server flying! 🚀");
+app.listen({ port: PORT, host: HOST }, (err, address) => {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
+  console.log(`Server flying! 🚀 at ${address}`);
 });

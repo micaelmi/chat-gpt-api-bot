@@ -34,9 +34,12 @@ function App() {
     if (e) e.preventDefault(); // Evita o reload do formulário
     if (question.trim().length === 0) return; // Não envia mensagens vazias
     setIsLoading(true);
-    const response = await axios.post(`http://localhost:5000/chat`, {
-      message: question,
-    });
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/chat`,
+      {
+        message: question,
+      }
+    );
     setMessages([
       ...messages,
       { message: question, type: "question" },
