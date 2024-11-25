@@ -35,7 +35,7 @@ function App() {
     if (question.trim().length === 0) return; // Não envia mensagens vazias
     setIsLoading(true);
     const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/chat`,
+      `https://chat-gpt-api-bot.onrender.com/chat`,
       {
         message: question,
       }
